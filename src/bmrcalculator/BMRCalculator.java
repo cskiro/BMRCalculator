@@ -29,6 +29,7 @@ public class BMRCalculator {
         String gender;
         double weight, height, bmr, numberOfChocolateBars;
         int age;
+
         // Creating Scanner object 
         Scanner kb = new Scanner(System.in);
 
@@ -37,47 +38,65 @@ public class BMRCalculator {
         gender = kb.nextLine().toLowerCase();
 
         if (gender.equalsIgnoreCase(MALE)) {
+            // User is male
             System.out.println("You selected male, I will now calculate your BMR..");
 
+            // Prompting male for weight in pounds
             System.out.println("What is your weight in pounds?");
             weight = kb.nextDouble();
 
+            // Prompting male for height in inches
             System.out.println("What is your height in inches?");
             height = kb.nextDouble();
 
+            // Prompting male for age
             System.out.println("What is your age?");
             age = kb.nextInt();
 
+            // Calculating male BMR
             bmr = (66 + (6.3 * weight) + (12.9 * height) - (6.8 * age));
 
+            // Calculating number of chocolate bars the user can eat in order
+            // to maintain weight
             numberOfChocolateBars = bmr / CALORIES_PER_CHOCOLATE_BAR;
-            
+
+            // Displaying user's BMR
             System.out.println("Your BMR is " + bmr);
 
-            System.out.println("In order to maintain weight you need to eat at least " 
+            // Displaying number of chocolate bars the user can eat
+            System.out.println("In order to maintain weight you need to eat at least "
                     + numberOfChocolateBars + " chocolate bars");
 
         } else {
+            // User is female
             System.out.println("You are a female, I will now calculate your BMR..");
 
+            // Prompting female for weight in pounds
             System.out.println("What is your weight in pounds?");
             weight = kb.nextDouble();
 
+            // Prompting female for height in inches
             System.out.println("What is your height in inches?");
             height = kb.nextDouble();
 
+            // Prompting female for age
             System.out.println("What is your age?");
             age = kb.nextInt();
 
+            // Calculating male BMR
             bmr = (655 + (4.3 * weight) + (4.7 * height) - (4.7 * age));
 
+            // Calculating number of chocolate bars the user can eat in order
+            // to maintain weight
             numberOfChocolateBars = bmr / CALORIES_PER_CHOCOLATE_BAR;
-            
+
+            // Displaying user's BMR
             System.out.println("Your BMR is " + bmr);
 
-            System.out.println("In order to maintain weight you need to eat at least " 
+            // Displaying number of chocolate bars the user can eat
+            System.out.println("In order to maintain weight you need to eat at least "
                     + numberOfChocolateBars + " chocolate bars");
-        }
+        } // end if-else
 
     } // end main
 
